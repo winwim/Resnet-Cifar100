@@ -17,6 +17,6 @@ Control the training process by choosing hyperparameters: learning rate, batch s
 
 For example.
 ``` 
-python main.py -batch=128 -lr=0.1 -w=2 -l2=2e-3
+$ python main.py -batch=128 -lr=0.1 -w=2 -l2=2e-3
 
 ```
