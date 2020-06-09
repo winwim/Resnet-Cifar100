@@ -36,10 +36,10 @@ class ResNet(nn.Module):
                                    nn.BatchNorm2d(num_features=32),
                                    nn.ReLU(inplace=True))
 
-        self.middle_blocks = nn.Sequential(self._build_layer(block, layers[0], out_channels=32, stride=2),
-                                           self._build_layer(block, layers[1], out_channels=64, stride=2),
-                                           self._build_layer(block, layers[2], out_channels=128, stride=2),
-                                           self._build_layer(block, layers[3], out_channels=256, stride=2),
+        self.middle_blocks = nn.Sequential(self._build_layer(block, layers[0], out_channels=64, stride=2),
+                                           self._build_layer(block, layers[1], out_channels=128, stride=2),
+                                           self._build_layer(block, layers[2], out_channels=256, stride=2),
+                                           self._build_layer(block, layers[3], out_channels=512, stride=2),
                                            nn.MaxPool2d(kernel_size=(2, 2)))
 
         self.output_blocks = nn.Sequential(nn.Dropout(p=0.5),
